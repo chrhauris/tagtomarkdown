@@ -1,0 +1,8 @@
+v.0.2.5, 2019-03-01 -- Try to make a source and wheel distribution
+v.0.2.4, 2019-03-01 -- Try to make a source and wheel distribution
+v.0.2.3, 2019-03-01 -- Try to make a source distribution so that the example is being distributed
+v.0.2.2, 2019-02-28 -- Ready for uploading to PyPi and testing the installation
+v.0.1.0, 2019-02-27 -- First version doing the business stuff right. Still need documentation
+v.0.0.3, 2019-02-25 -- Back to original tagtomarkup that actually works
+v.0.0.2, 2019-02-24 -- Try using more Python files
+v.0.0.1, 2019-02-23 -- First Proof of concept working
