@@ -52,16 +52,16 @@ The supported tags are:
 **&gt;cell [optional cell text in same line]**
 :   Produces a table cell. Contents can be of more lines.
 
-**&gt;cell *start [symbol]**
+**&gt;cell &ast;start [symbol]**
 :   Sets a counter to the value 1 and inserts the 1 in a new cell,
     *symbol* is stored as a substitutable symbol of name symbol and the value 1
 
-**&gt;cell *incr [symbol]**
+**&gt;cell &ast;incr [symbol]**
 :   Increments the counter and writes its value in a new cell.
     *symbol* is stored as a substitutable symbol of name symbol and the value of
     the number substituting *incr.
 
-**&gt;/row [*tableno] [optional table caption text in same line]**
+**&gt;/row [&ast;tableno] [optional table caption text in same line]**
 :   End a table definition. If the table definitions ends with a blank line,
     this tag is not necessary.
     *tableno indicates that the caption should be preceded by the text "Table n: "
@@ -69,11 +69,11 @@ The supported tags are:
 
 #### Ordered lists
 
-**&gt;li *start [symbol]**
+**&gt;li &ast;start [symbol]**
 :   Sets a counter to the value 1 and inserts the 1 in a new line.
    symbol is stored as a substitutable symbol of name symbol and the value 1
 
-**&gt;li *incr [symbol]**
+**&gt;li &ast;incr [symbol]**
 :   Initiates a new List Item with a number.
     symbol is stored as a substitutable symbol of name symbol and the value of
     the number substituting *incr.
@@ -128,7 +128,7 @@ The supported tags are:
 The extension was made using Python v.3. As far as `mkdocs`goes, it has been
 tested with v.1.0.4.
 
-You arae supposeed to install *Python-Markdown* and, maybe, *MkDocs* yourself
+You are supposed to install *Python-Markdown* and, maybe, *MkDocs* yourself
 independently of this product, which is defined as being dependent on *Markdown*,
 i.e. *Python-Markdown*. 
 
