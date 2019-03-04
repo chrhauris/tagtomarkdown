@@ -12,8 +12,8 @@ For running under Python-Markdown, run the produceHtml.py script:
 
     python3 produceHtml.py
 
-in the directory test_data. It should produce a Page1.html file in the directory
-test_data. It doesn't look so well because of the lack of css files.
+in the directory sample. It should produce a Page1.html file in the directory
+sample. It doesn't look so well because of the lack of css files.
 
 For running under MkDocs go down into the doc directory and issue the command:
 
