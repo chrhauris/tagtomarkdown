@@ -1,6 +1,8 @@
 # Christians first attempt to make a Python3 package
 import pkg_resources
 
+name = 'tagtomarkdown'
+
 class ToolSet(object):
   pass
 

@@ -19,15 +19,19 @@ def makeExtension(**kwargs):
   print(**kwargs)
   return TableTagExtension(**kwargs)
 
+# Can be called from the console_scripts as defined in setup.py.
+def version():
+  return 'tagtomarkdown v.0.2.7'
+
 class TableTagExtension(Extension):
 
   config = {}
 
   def __init__(self, **kwargs):
     #print(kwargs)
-    self.config = {
-      'dummy' : ['Defaultdummy', 'Just to show the usage of a parameter']
-    }
+    #self.config = {
+    #  'dummy' : ['Defaultdummy', 'Just to show the usage of a parameter']
+    #}
     super(TableTagExtension, self).__init__(**kwargs)
     #super(TableTagExtension, args*, **kwargs)
 
@@ -42,6 +46,10 @@ class TableTagExtension(Extension):
 
 # ---------------------------------------------------------
 class TagConverter(Preprocessor):
+
+  def __init__(self, substitutions):
+    super().__init__()
+    self.substitutions = substitutions
 
   def run(self, lines):
     documentElement = DocumentElement()
@@ -186,7 +194,7 @@ class DocumentElement:
               if len(words) > 2:
                 self.elements[i] = substitutionString + words[2]
               else:
-                print('- line: %s replaced by: %s' % (self.elements[i], substitutionString))
+                #print('- line: %s replaced by: %s' % (self.elements[i], substitutionString))
                 self.elements[i] = substitutionString
             else:
               del self.elements[i]

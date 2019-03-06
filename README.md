@@ -28,7 +28,7 @@ it in a document's *mkdocs.yml* file like this:
 
 ### Tags supported by the preprocessor
 
-Please note that the source installation contains a directory, `test_data`,
+Please note that the source installation contains a directory, `sample`,
 showing test and example use of the tool. There is a `README.txt` file there
 explaining the files. It might be quicker to get the idea by looking at the example
 than by reading the below, you might consider the below as a reference manual.

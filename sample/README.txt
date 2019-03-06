@@ -19,5 +19,6 @@ For running under MkDocs go down into the doc directory and issue the command:
 
     mkdocs build
 
-This reads the md file in the doc/docs directory and converts it into an HTML file
-in the doc/site directory where MkDocs will place a few more files.
+This reads the md files in the doc/docs directory and converts them into HTML files
+in the doc/site directory where MkDocs will place a few more files. Such md files
+can contain the tags, supported by this tool, e.g. the table ones: `>row` and `>cell`. 

@@ -7,8 +7,8 @@ with open('LICENSE.txt') as license_file:
 
 setup(
     name='tagtomarkdown',
-    version='0.2.6',
-    description='Python3 markdown extension for converting tags to markdown table',
+    version='0.2.7',
+    description='Python3 markdown extension for converting tags to Markdown table',
     long_description=long_description,
     long_description_content_type='text/markdown',
     install_requires=['markdown'],
@@ -28,7 +28,13 @@ setup(
       'Programming Language :: Python :: 3.6',
       'Topic :: Text Processing',
     ],
+    # markdown.extensions is for Python Markdown and MkDocs
+    # console_scripts is for getting the product's version number using these commands:
+    #   import tagtomarkdown
+    #   print(tagtomarkdown.version())
+    #
     entry_points={
-      'markdown.extensions': ['tagtomarkdown = tagtomarkdown:TableTagExtension']
+      'markdown.extensions': ['tagtomarkdown = tagtomarkdown:TableTagExtension'],
+      'console_scripts': ['version = tagtomarkdown:version']
     }
 )

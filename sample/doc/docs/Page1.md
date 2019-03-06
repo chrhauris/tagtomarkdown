@@ -32,7 +32,7 @@ Next item.
 >li
 Note no keyword (*incr) here.
 
-># And that's it for the ordered list. This  line is a comment and will not appear in the Markdown text.
+># And that's it for the ordered list. This line is a comment and will not appear in the Markdown text.
 
 ## Test references to table row numbers and ordered list numbers
 
