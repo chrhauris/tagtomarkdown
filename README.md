@@ -35,7 +35,7 @@ get something like "tagtomarkdown not found".
 
 ### Tags supported by the preprocessor
 
-Please note that the source installation contains a directory, `sample`,
+Please note that the source distribution contains a directory, `sample`,
 showing test and example use of the tool. There is a `README.txt` file there
 explaining the files. It might be quicker to get the idea by looking at the example
 than by reading the below, you might consider the below as a reference manual.

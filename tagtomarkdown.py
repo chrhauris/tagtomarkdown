@@ -41,7 +41,7 @@ def makeExtension(*args, **kwargs):
 
 # Can be called from the console_scripts as defined in setup.py.
 def version():
-  return 'tagtomarkdown v.0.2.9, 2019-03-08'
+  return 'tagtomarkdown v.0.3.0, 2019-03-08'
 
 class TableTagExtension(Extension):
 

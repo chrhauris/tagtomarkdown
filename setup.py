@@ -7,7 +7,7 @@ with open('LICENSE.txt') as license_file:
 
 setup(
     name='tagtomarkdown',
-    version='0.2.9',
+    version='0.3.0',
     description='Python3 markdown extension for converting tags to Markdown table',
     long_description=long_description,
     long_description_content_type='text/markdown',
@@ -19,13 +19,14 @@ setup(
     license=license,
     keywords='Markdown MkDocs tables',
     classifiers=[
-      'Development Status :: 3 - Alpha',
+      'Development Status :: 5 - Beta',
       'Intended Audience :: Documentation',
       'Operating System :: OS Independent',
       'Programming Language :: Python :: 3.3',
       'Programming Language :: Python :: 3.4',
       'Programming Language :: Python :: 3.5',
       'Programming Language :: Python :: 3.6',
+      'Programming Language :: Python :: 3.7',
       'Topic :: Text Processing',
     ],
     data_files=[
