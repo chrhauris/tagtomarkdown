@@ -4,7 +4,7 @@ import markdown
 import codecs
 from markdown.extensions.tables import TableExtension 
 from markdown.extensions.toc import TocExtension
-from tagtomarkdown import TableTagExtension
+#from tagtomarkdown import TableTagExtension
 import sys
 import os
 #

@@ -18,6 +18,10 @@ or:
      ...
     html = md.convert('Line 1\n>br text\nLine 3 and last', extensions=[TableTagExtension()], output_format='html5')
 
+or:
+
+    html = md.convert('Line 1\n>br text\nLine 3 and last', extensions=['tables', 'tagtomarkdown'], output_format='html5')
+
 It can also be used as a [MkDocs](https://www.mkdocs.org/) extension by referring
 it in a document's *mkdocs.yml* file like this:
 
@@ -25,6 +29,9 @@ it in a document's *mkdocs.yml* file like this:
       - tagtomarkdown
       - tables
         ...
+
+Your *MkDocs* instance must be installed under Python version 3, or you will
+get something like "tagtomarkdown not found".
 
 ### Tags supported by the preprocessor
 

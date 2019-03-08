@@ -1,2 +1,4 @@
 /$legend.txt
+/build/
 /dist/
+/tagtomarkdown.egg-info/

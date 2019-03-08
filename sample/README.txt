@@ -20,5 +20,6 @@ For running under MkDocs go down into the doc directory and issue the command:
     mkdocs build
 
 This reads the md files in the doc/docs directory and converts them into HTML files
-in the doc/site directory where MkDocs will place a few more files. Such md files
-can contain the tags, supported by this tool, e.g. the table ones: `>row` and `>cell`. 
+in the doc/site directory where MkDocs will place a few more files. Because you are
+using the *tagtomarkdown* extension, such md files can contain the tags, supported
+by this tool, e.g. the table ones: `>row` and `>cell`. 

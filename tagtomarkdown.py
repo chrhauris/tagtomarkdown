@@ -1,5 +1,25 @@
 #!/usr/bin/env python3
 #
+# Copyright (c) 2019-2022 Christian Hauris Sorensen
+# 
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+# 
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+# 
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+#
 # Descriptions of packing Python:
 # - https://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/creation.html
 # - https://python-markdown.github.io/extensions/api/
@@ -15,13 +35,13 @@ import sys
 # ----------------------------------
 # Setup up the Markdown extension
 # ----------------------------------
-def makeExtension(**kwargs):
-  print(**kwargs)
+def makeExtension(*args, **kwargs):
+  #print(**kwargs)
   return TableTagExtension(**kwargs)
 
 # Can be called from the console_scripts as defined in setup.py.
 def version():
-  return 'tagtomarkdown v.0.2.7'
+  return 'tagtomarkdown v.0.2.9, 2019-03-08'
 
 class TableTagExtension(Extension):
 
@@ -37,8 +57,8 @@ class TableTagExtension(Extension):
 
   def extendMarkdown(self, md, md_globals):
     #md.register(TagConverter(md), 'tagtomarkdown', 175)
-    md.preprocessors.add('tagtomarkdown', TagConverter(md), '_begin')
     md.registerExtension(self)
+    md.preprocessors.add('tagtomarkdown', TagConverter(md), '_begin')
 
 # -------------------------------
 # Business logic from here
