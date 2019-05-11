@@ -41,7 +41,7 @@ def makeExtension(*args, **kwargs):
 
 # Can be called from the console_scripts as defined in setup.py.
 def version():
-  return 'tagtomarkdown v.0.3.0, 2019-03-08'
+  return 'tagtomarkdown v.0.4.0, 2019-04-11'
 
 class TableTagExtension(Extension):
 
@@ -328,8 +328,7 @@ class DocumentElement:
 #   If a second word is given (period, e.g.), it is inserted right after the time stamp (no space).
 #
 # >br  Insert a line break
-# >br1 Same as >br
-# >br2 Insert a two-line break
+# >brn n must be an integer: Insert n line breaks
 #
 class SimpleConversions:
 
@@ -337,6 +336,7 @@ class SimpleConversions:
     i = 0
     while i < len(documentElement.elements):
       line = documentElement.elements[i]
+      #print('line: %s' % line)
       if isinstance(line, str):
         replacementString = ''
         if line.startswith('>datetime'):
@@ -345,12 +345,24 @@ class SimpleConversions:
           replacementString = datetime.now().isoformat(' ')[0:10]
         elif line.startswith('>time'):
           replacementString = datetime.now().isoformat(' ')[11:19]
-        elif line.startswith('>br1'):
-          replacementString = '<br />'
-        elif line.startswith('>br2'):
-          replacementString = '<br /><br />'
+        #elif line.startswith('>br1'):
+        #  replacementString = '<br />'
+        #elif line.startswith('>br2'):
+        #  replacementString = '<br /><br />'
+        #elif line.startswith('>br'):
+        #  replacementString = '<br />'
         elif line.startswith('>br'):
-          replacementString = '<br />'
+          words = line.split()   ;# V.0.4.0 addition:
+          l = words[0]           ;# Support for any number of line breaks, i.e. '>brn', n being any inteeger
+          if len(l) == 3:
+            replacementString = '<br />'
+          else:
+            repetitionNoString = l[3:]
+            if repetitionNoString.isnumeric():
+              repetitionNo = int(repetitionNoString)
+              while repetitionNo > 0:
+                replacementString += '<br />'
+                repetitionNo -= 1
         if len(replacementString) > 0:
           words = line.split()
           #print('- words: %s' % words)
@@ -468,7 +480,7 @@ class TableConversion:
           #print('tableMode: line, length: %s, %d' % (line, line.__len__()))
           if len(line.strip()) < 1 or line.startswith('>/row'):
             #print('tableMode, len(line) == 0...')
-            statusPrint('End of table...')
+            #statusPrint('End of table...')
             savedContents = self.closeCell(cellContents)
             cellContents = ''
             if len(savedContents) > 0:

@@ -22,7 +22,7 @@ or:
 
     html = md.convert('Line 1\n>br text\nLine 3 and last', extensions=['tables', 'tagtomarkdown'], output_format='html5')
 
-It can also be used as a [MkDocs](https://www.mkdocs.org/) extension by referring
+It can also be used as an [MkDocs](https://www.mkdocs.org/) extension by referring
 it in a document's *mkdocs.yml* file like this:
 
     markdown_extensions:
@@ -46,6 +46,16 @@ by a name. The `>` character must be at the beginning of a new line.
 The supported tags are:
 
 #### Tables
+
+Tables are started the usual *Markdown* way, i.e. like this:
+
+```
+|:-:|---|
+|No.|Subject|
+```
+
+The rows following the header row are then defined using the language, defined below.
+A table is ended by either a blank line or by the ```&gt;/row``` tag.
 
 **&gt;row**
 :   Produces a new table row
@@ -124,16 +134,14 @@ The supported tags are:
 **&gt;br**
 :   Insert a line break
 
-**&gt;br1**
-:   Same as >br
-
-**&gt;br2**
-:  Insert a two-line break
+**&gt;brn**, n being an integer
+:  Insert n line breaks
 
 ### Installation
 
-The extension was made using Python v.3. As far as `mkdocs`goes, it has been
-tested with v.1.0.4.
+The extension was made using Python v.3. As far as `mkdocs` goes, it has been
+tested with v.1.0.4. It has been test installed and tested un Linux Mint 19
+and Windows 10.
 
 You are supposed to install *Python-Markdown* and, maybe, *MkDocs* yourself
 independently of this product, which is defined as being dependent on *Markdown*,
@@ -154,3 +162,15 @@ it was started.
 If you are using the tags for defining table cells, you should of course make the
 document's *mkdocs.yml* file refer the `tables` extension too, like shown in the
 figure above.
+
+If you are in doubt which version is installed on your machine, you can issue
+these commands in a console:
+
+    1 python3
+    2 >>> import tagtomarkdown
+    3 >>> print(tagtomarkdown.version())
+    4 tagtomarkdown v.0.4.0, 2019-04-11
+    5 >>>
+
+Line 4 is the product's indication of its version. You can update the product
+by adding the `--update` flag to the `pip3 install ...` command.
